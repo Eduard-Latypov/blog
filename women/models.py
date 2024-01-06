@@ -26,7 +26,7 @@ class Women(models.Model):
         PUBLISHED = 1, 'Опубликовано'
 
     title = models.CharField(max_length=255, verbose_name="Заголовок")
-    slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name="Slug",                           validators=[
+    slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name="Slug", validators=[
                                MinLengthValidator(5, message="Минимум 5 символов"),
                                MaxLengthValidator(100, message="Максимум 100 символов"),
                            ])

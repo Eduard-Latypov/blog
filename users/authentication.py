@@ -19,5 +19,3 @@ class EmailAuthBackend(ModelBackend):
             return user_model.objects.get(pk=user_id)
         except user_model.DoesNotExist:
             return None
-
-

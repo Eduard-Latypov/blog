@@ -23,9 +23,9 @@ from women import views
 from women.views import page_not_found
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('women.urls')),
-    path('users/', include('users.urls', namespace="users")),
+    path("admin/", admin.site.urls),
+    path("", include("women.urls")),
+    path("users/", include("users.urls", namespace="users")),
     path("__debug__/", include("debug_toolbar.urls")),
 ]
 

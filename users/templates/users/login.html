@@ -13,4 +13,5 @@
     {% endfor %}
     <p><button type="submit">Войти</button></p>
 </form>
+<p><a href="{% url 'users:password_reset_form' %}">Забыли пароль</a> </p>
 {% endblock %}

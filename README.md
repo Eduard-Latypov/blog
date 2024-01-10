@@ -33,25 +33,31 @@ source venv/bin/activate
 source venv/source/activate
 ```
 
-4. Создать файл `.env`:
+4. Создать приложение в Google или Yandex и получить пароль для процедуры привязки почтового 
+   SMTP-бэкенда к аккаунту Google или Yandex. Справочная информация по [ссылке](https://kb.synology.com/ru-ru/SRM/tutorial/How_to_use_Gmail_SMTP_server_to_send_emails_for_SRM)
+
+5. Создать файл `.env`:
 
 ```
 touch .env
 ```
 
-5. Заполнить файл следующим содержанием:
+6. Заполнить файл следующим содержанием:
 ```
 SECRET_KEY=секретная комбинация из одноименного параметра в settings.py
+EMAIL_HOST=SMTP сервер (Google или Yandex)
+EMAIL_HOST_USER=почта от имени, которой будут отправляться письма клиентам для восстановления пароля
+EMAIL_HOST_PASSWORD=пароль, который будет получен после создания приложения в (Google или Yandex)
 
 ```
 
-6. Установить зависимости из файла requirements.txt:
+7. Установить зависимости из файла requirements.txt:
 
 ```
 pip install -r requirements.txt
 ```
 
-7. Сформировать и выполнить миграции:
+8. Сформировать и выполнить миграции:
 
 ```
 python manage.py makemigrations
@@ -63,17 +69,17 @@ python manage.py makemigrations [имя приложения]
 python manage.py migrate
 ```
 
-8. Создать супер-пользователя:
+9. Создать супер-пользователя:
 ```
 python manage.py createsuperuser
 ```
 
-9. Собрать статику:
+10. Собрать статику:
 ```
 python manage.py collectstatic
 ```
 
-10. Запустить dev-сервер:
+11. Запустить dev-сервер:
 ```
 python manage.py runserver
 ```

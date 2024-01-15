@@ -27,6 +27,7 @@ urlpatterns = [
     path("", include("women.urls")),
     path("users/", include("users.urls", namespace="users")),
     path("__debug__/", include("debug_toolbar.urls")),
+    path("social-auth/", include("social_django.urls", namespace="social")),
 ]
 
 if settings.DEBUG:

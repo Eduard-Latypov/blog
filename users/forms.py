@@ -71,6 +71,7 @@ class ProfileUserForm(forms.ModelForm):
     )
     email = forms.EmailField(
         disabled=True,
+        required=False,
         label="E-mail",
         widget=forms.TextInput(attrs={"class": "form-input"}),
     )

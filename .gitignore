@@ -132,5 +132,7 @@ dmypy.json
 # .idea
 .idea
 
+cert.crt
+cert.key
 
 

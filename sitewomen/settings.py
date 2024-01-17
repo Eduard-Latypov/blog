@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "users",
     "debug_toolbar",
     "social_django",
+    "captcha",
 ]
 
 MIDDLEWARE = [
@@ -100,6 +101,13 @@ DATABASES = {
         "PASSWORD": "1234",
         "HOST": "localhost",
         "PORT": 5432,
+    }
+}
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379",
     }
 }
 
@@ -196,3 +204,6 @@ SOCIAL_AUTH_PIPELINE = (
     "social_core.pipeline.social_auth.load_extra_data",
     "social_core.pipeline.user.user_details",
 )
+
+CAPTCHA_IMAGE_SIZE = (130, 70)
+CAPTCHA_FONT_SIZE = 35

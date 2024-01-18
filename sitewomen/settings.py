@@ -41,6 +41,7 @@ INTERNAL_IPS = ["127.0.0.1"]
 # Application definition
 
 INSTALLED_APPS = [
+    "debug_toolbar",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -50,9 +51,10 @@ INSTALLED_APPS = [
     "django_extensions",
     "women.apps.WomenConfig",
     "users",
-    "debug_toolbar",
     "social_django",
     "captcha",
+    "django.contrib.sites",
+    "django.contrib.sitemaps",
 ]
 
 MIDDLEWARE = [
@@ -207,3 +209,5 @@ SOCIAL_AUTH_PIPELINE = (
 
 CAPTCHA_IMAGE_SIZE = (130, 70)
 CAPTCHA_FONT_SIZE = 35
+
+SITE_ID = 1
